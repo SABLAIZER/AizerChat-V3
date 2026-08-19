@@ -13,159 +13,94 @@ let facingMode = "user";
 let currentFilter = "none";
 
 // START CAMERA
-
 async function startCamera(){
-
 if(stream){
-
 stream.getTracks().forEach(track=>track.stop());
-
 }
 
 stream = await navigator.mediaDevices.getUserMedia({
-
 video:{
 facingMode:facingMode
 },
-
 audio:false
-
 });
 
 video.srcObject = stream;
-video.style.display = "block"; // FIX 1: Show video again when restarting
+video.style.display = "block"; // Show video when starting
 video.play();
-
 }
 
 // SWITCH CAMERA
-
 switchBtn.onclick=function(){
-
 facingMode =
 facingMode==="user"
 ? "environment"
 : "user";
 
 startCamera();
-
 };
 
 // FILTERS
+const filterButtons = document.querySelectorAll(".filters button");
 
-const filterButtons =
-document.querySelectorAll(".filters button");
-
+// FIX: Use % for canvas. Canvas doesn't understand "1" or "2"
 const filterList=[
-
-"none", // 0
-
-"brightness(130%)", // 1
-
-"grayscale(100%)", // 2
-
-"sepia(100%)", // 3
-
-"saturate(200%)", // 4
-
-"hue-rotate(330deg)" // 5
-
+"none",
+"brightness(130%)",
+"grayscale(100%)",
+"sepia(100%)",
+"saturate(200%)",
+"hue-rotate(330deg)"
 ];
 
 filterButtons.forEach((btn,index)=>{
-
 btn.onclick=function(){
 
-currentFilter = filterList[index];
+  // FIX: Add active ring to selected filter
+  filterButtons.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
 
-video.style.filter=currentFilter;
-
+  currentFilter = filterList[index];
+  video.style.filter=currentFilter;
 };
-
 });
 
-// CAPTURE
+// FIX: Set first filter as active by default
+filterButtons[0].classList.add('active');
 
+// CAPTURE
 captureBtn.onclick=function(){
 
 let canvas=document.createElement("canvas");
 
 canvas.width=video.videoWidth;
-
 canvas.height=video.videoHeight;
 
 let ctx=canvas.getContext("2d");
 
-// apply filter to captured image
-
+// apply filter to captured image - this burns it into the photo
 ctx.filter=currentFilter;
 
 ctx.drawImage(
-
 video,
-
 0,
-
 0,
-
 canvas.width,
-
 canvas.height
-
 );
 
 let image=canvas.toDataURL("image/png");
 
-// FIX 2: STOP CAMERA SO IT DOESN'T SPLIT
+// FIX: STOP CAMERA SO IT DOESN'T SPLIT
 stream.getTracks().forEach(track=>track.stop());
 
-// FIX 3: HIDE LIVE VIDEO
+// FIX: HIDE LIVE VIDEO
 video.style.display = "none";
 
 showPreview(image);
-
 };
 
 // PREVIEW
-
 function showPreview(image){
 
-let preview=document.createElement("img");
-
-preview.src=image;
-
-preview.className="previewImage";
-
-// FIX 4: Add a retake button so user can go back
-let retakeBtn = document.createElement("button");
-retakeBtn.innerText = "Retake";
-retakeBtn.className = "retakeBtn";
-retakeBtn.onclick = () => {
-  preview.remove();
-  retakeBtn.remove();
-  startCamera(); // restart camera
-}
-
-let cameraView = document.querySelector(".cameraView");
-cameraView.appendChild(preview);
-cameraView.appendChild(retakeBtn); // add retake button
-}
-
-// CLOSE
-
-closeBtn.onclick=function(){
-
-if(stream){
-
-stream.getTracks().forEach(track=>track.stop());
-
-}
-
-history.back();
-
-};
-
-startCamera();
-
-video.removeAttribute("controls");
-video.controls = false;
+let preview=document.createElement
