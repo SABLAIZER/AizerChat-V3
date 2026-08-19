@@ -58,17 +58,17 @@ document.querySelectorAll(".filters button");
 
 const filterList=[
 
-"none",
+"none", // 0
 
-"brightness(1.3)",
+"brightness(130%)", // 1
 
-"grayscale(1)",
+"grayscale(100%)", // 2
 
-"sepia(1)",
+"sepia(100%)", // 3
 
-"saturate(2)",
+"saturate(200%)", // 4
 
-"hue-rotate(330deg)"
+"hue-rotate(330deg)" // 5
 
 ];
 
