@@ -53,11 +53,12 @@ font-size:20px;
 /* FILTER BUTTONS - ONLY 1 BLOCK */
 .filters{
 position:absolute;
-bottom:180px;
+bottom: calc(200px + env(safe-area-inset-bottom)); /* was 180px */
 width:100%;
 display:flex;
 justify-content:center;
 gap:18px;
+z-index:20;
 }
 
 .filters button{
@@ -88,7 +89,7 @@ overflow: hidden; /* FIX: so filter preview doesn't spill */
 /* CAPTURE BUTTON */
 .captureBtn{
 position:absolute;
-bottom:80px;
+bottom: calc(100px + env(safe-area-inset-bottom)); /* FIX: push above nav + home bar */
 left:50%;
 transform:translateX(-50%);
 width:75px;
@@ -97,6 +98,7 @@ border-radius:50%;
 background:white;
 border:8px solid rgba(255,255,255,.3);
 box-shadow:0 0 30px rgba(255,255,255,.3);
+z-index:20; /* make sure it's above nav */
 }
 
 /* =========================================================
@@ -106,7 +108,8 @@ box-shadow:0 0 30px rgba(255,255,255,.3);
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 15px;
+    bottom: calc(15px + env(safe-area-inset-bottom)); /* FIX */
+    padding-bottom: env(safe-area-inset-bottom); /* FIX */
     width: min(420px, calc(100% - 24px));
     height: 70px;
     display: flex;
@@ -146,6 +149,7 @@ box-shadow:0 0 30px rgba(255,255,255,.3);
     filter:drop-shadow(0 0 8px var(--primary-glow));
     transition: color.3s ease, filter.3s ease, transform.2s ease;
 }
+
 
 .cameraView video{
 transition:.4s ease;
