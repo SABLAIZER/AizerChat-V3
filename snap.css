@@ -186,3 +186,36 @@ pointer-events:none;
   font-weight: 600;
   z-index: 10;
 }
+
+.sendBtn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 25px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 16px;
+  z-index: 10;
+}
+
+.retakeBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 12px 25px;
+  background: rgba(255,255,255,.2);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 16px;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.captureBtn:active{
+  transform: translateX(-50%) scale(0.9);
+}
