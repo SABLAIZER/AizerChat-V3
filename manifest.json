@@ -1,0 +1,9 @@
+{
+  "name": "Sablaizer",
+  "short_name": "Sab",
+  "start_url": "/index.html",  /* <-- THIS */
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait"
+}
