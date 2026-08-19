@@ -1,0 +1,358 @@
+/* ==========================
+   AIZERCHAT LOGIN
+========================== */
+
+.loginPage{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:25px 18px;
+
+    overflow-y:auto;
+
+}
+
+
+/* LOGO */
+
+.loginLogo{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.logoCircle{
+
+    width:70px;
+    height:70px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:22px;
+
+    background:dodgerblue;
+
+    font-size:32px;
+
+    box-shadow:
+    0 0 30px var(--primary-glow);
+
+}
+
+.loginLogo h1{
+
+    margin-top:12px;
+
+    font-size:30px;
+
+    color:var(--text);
+
+}
+
+.loginLogo p{
+
+    margin-top:5px;
+
+    color:var(--sub);
+
+    font-size:14px;
+
+}
+
+
+/* LOGIN CARD */
+
+.loginCard{
+
+    width:100%;
+    max-width:390px;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.loginCard h2{
+
+    color:var(--text);
+
+    font-size:23px;
+
+}
+
+.loginSubtitle{
+
+    margin-top:6px;
+
+    margin-bottom:22px;
+
+    color:var(--sub);
+
+    font-size:13px;
+
+}
+
+
+/* INPUTS */
+
+.inputGroup{
+
+    margin-bottom:17px;
+
+}
+
+.inputGroup label{
+
+    display:block;
+
+    margin-bottom:7px;
+
+    color:var(--text);
+
+    font-size:13px;
+
+}
+
+.inputGroup input{
+
+    width:100%;
+
+    height:48px;
+
+    padding:0 15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    color:var(--text);
+
+    font-size:14px;
+
+}
+
+.inputGroup input::placeholder{
+
+    color:var(--sub);
+
+}
+
+
+/* PASSWORD */
+
+.passwordBox{
+
+    position:relative;
+
+}
+
+.passwordBox input{
+
+    padding-right:50px;
+
+}
+
+#showPassword{
+
+    position:absolute;
+
+    right:5px;
+    top:5px;
+
+    width:38px;
+    height:38px;
+
+    border:none;
+    border-radius:12px;
+
+    background:transparent;
+
+    color:var(--text);
+
+    cursor:pointer;
+
+}
+
+
+/* FORGOT */
+
+.forgotBtn{
+
+    display:block;
+
+    margin:0 0 18px auto;
+
+    border:none;
+
+    background:none;
+
+    color:var(--primary);
+
+    font-size:13px;
+
+    cursor:pointer;
+
+}
+
+
+/* LOGIN BUTTON */
+
+.loginBtn{
+
+    width:100%;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:dodgerblue;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 20px var(--primary-glow);
+
+}
+
+.loginBtn:active{
+
+    transform:scale(.98);
+
+}
+
+
+/* DIVIDER */
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:22px 0;
+
+    color:var(--sub);
+
+}
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:var(--line);
+
+}
+
+
+/* SIGN UP */
+
+.signupText{
+
+    text-align:center;
+
+    color:var(--sub);
+
+    font-size:13px;
+
+}
+
+.signupText button{
+
+    border:none;
+
+    background:none;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+/* FOOTER */
+
+.loginFooter{
+
+    margin-top:18px;
+
+    color:var(--sub);
+
+    font-size:11px;
+
+}
+
+
+/* ==========================
+   LIGHT MODE
+========================== */
+
+body.light-mode .loginCard{
+
+    background:rgba(255,255,255,.9);
+
+    border:1px solid #E5E7EB;
+
+}
+
+body.light-mode .inputGroup input{
+
+    background:#F1F3F5;
+
+    border:1px solid #E5E7EB;
+
+    color:#111B21;
+
+}
+
+body.light-mode .inputGroup label{
+
+    color:#111B21;
+
+}

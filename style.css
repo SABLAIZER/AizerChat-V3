@@ -1,0 +1,459 @@
+/*=================================
+AIZERCHAT V3
+style.css
+HOME DESIGN PART 1
+================================= */
+:root{
+
+--bg:#0B141A;
+--card:#111B21;
+--header:#202C33;
+--line:#2A3942;
+
+--primary:#25D366;
+--primary-dark:#1DA851;
+--primary-glow:rgba(37,211,102,.45);
+--text:#FFFFFF;
+--sub:#8696A0;
+
+--shadow:0 10px 35px rgba(0,0,0,.35);
+
+--radius:18px;
+
+}
+
+
+/* ==========================
+GLOBAL LAYOUT
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    background:linear-gradient(
+        180deg,
+        #07131A 0%,
+        #0B141A 50%,
+        #111B21 100%
+    );
+
+    color:var(--text);
+
+    display:flex;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+.app{
+    width:100%;
+    max-width:430px;
+    height:100vh;
+
+    background:var(--card);
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+}
+/* ==========================
+AIZERCHAT MODES
+========================== */
+
+body.dataMode{
+
+--primary:#2563EB;
+--primary-glow:rgba(37,99,235,.45);
+
+}
+
+body.textMode{
+
+--primary:#25D366;
+--primary-glow:rgba(37,211,102,.45);
+
+}
+
+.mode-pill{
+
+background:var(--primary);
+
+color:var(--text);
+
+box-shadow:0 0 18px var(--primary-glow);
+
+transition:all .35s ease;
+
+}
+
+.mode-glow{
+
+animation:modePulse 2s infinite;
+
+}
+
+@keyframes modePulse{
+
+0%{
+
+box-shadow:0 0 10px var(--primary-glow);
+
+}
+
+50%{
+
+box-shadow:0 0 28px var(--primary-glow);
+
+}
+
+100%{
+
+box-shadow:0 0 10px var(--primary-glow);
+
+}
+
+}
+
+/* ==========================
+   PREMIUM LIGHT MODE
+========================== */
+
+body.light-mode{
+    background:#F5F7FB;
+    color:#111B21;
+}
+
+body.light-mode .app{
+    background:#FFFFFF;
+}
+
+body.light-mode .app-header{
+    background:rgba(255,255,255,.78);
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+    border-bottom:1px solid #E5E5E5;
+}
+
+body.light-mode .searchContainer{
+    background:#F1F3F5;
+}
+
+body.light-mode .searchContainer input{
+    color:#111B21;
+}
+
+body.light-mode .searchContainer input::placeholder{
+    color:#777;
+}
+
+body.light-mode .chatCard{
+    background:#FFFFFF;
+    border:1px solid #ECECEC;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+body.light-mode .chatInfo h3{
+    color:#111B21;
+}
+
+body.light-mode .chatInfo p{
+    color:#666;
+}
+
+body.light-mode .bottomNav{
+    background:rgba(255,255,255,.85);
+    border:1px solid #EAEAEA;
+}
+
+body.light-mode .bottomNav button{
+    color:#777;
+}
+
+body.light-mode .bottomNav button.active{
+    color:#2563EB;
+}
+
+body.light-mode .themeBtn,
+body.light-mode .icon-btn{
+    background:#EEF2F7;
+    color:#111B21;
+}
+
+body.light-mode .tabs button{
+    background:#EEF2F7;
+    color:#111B21;
+}
+
+body.light-mode .tabs .active{
+    background:#2563EB;
+    color:#fff;
+}
+
+/* ==========================
+ PREMIUM LIGHT MODE V2
+========================== */
+
+body.light-mode{
+    background:#F2F4F8;
+    color:#111B21;
+}
+
+
+/* App */
+body.light-mode .app{
+    background:#FFFFFF;
+}
+
+
+/* Header */
+body.light-mode .app-header{
+
+    background:rgba(255,255,255,.85);
+
+    border-bottom:1px solid #E6E6E6;
+
+}
+
+
+/* Header title */
+body.light-mode .header-left h1{
+
+    color:#111B21;
+
+}
+
+
+/* Search */
+body.light-mode .searchContainer{
+
+    background:#EEF1F5;
+
+}
+
+
+body.light-mode .searchContainer input{
+
+    color:#111B21;
+
+}
+
+
+/* Chat cards */
+body.light-mode .chatCard{
+
+    background:#FFFFFF;
+
+    border:1px solid #E8E8E8;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.05);
+
+}
+
+
+body.light-mode .chatInfo h3{
+
+    color:#111B21;
+
+}
+
+
+body.light-mode .chatInfo p{
+
+    color:#6B7280;
+
+}
+
+
+/* Bottom navigation */
+body.light-mode .bottomNav{
+
+    background:rgba(255,255,255,.9);
+
+    border:1px solid #E5E7EB;
+
+}
+
+
+body.light-mode .bottomNav button{
+
+    color:#6B7280;
+
+}
+
+
+body.light-mode .bottomNav button.active{
+
+    color:var(--primary);
+
+}
+
+
+/* Icons */
+body.light-mode .icon-btn,
+body.light-mode .themeBtn{
+
+    background:#EEF1F5;
+
+    color:#111B21;
+
+}
+
+
+/* Tabs */
+body.light-mode .tabs button{
+
+    background:#EEF1F5;
+
+    color:#111B21;
+
+}
+
+
+body.light-mode .tabs .active{
+
+    background:var(--primary);
+
+    color:var(--text);
+
+}
+
+
+/* Floating button*/
+body.light-mode .fab{
+
+    color:#fff;
+
+}
+
+body{
+
+margin:0;
+
+min-height:100vh;
+
+overflow:hidden;
+
+}
+
+
+body.light-mode{
+
+--bg:#F5F7FB;
+--card:#FFFFFF;
+--header:#FFFFFF;
+--text:#111B21;
+--sub:#6B7280;
+--line:#E5E7EB;
+
+background:var(--bg);
+color:var(--text);
+
+}
+
+
+body.light-mode .callsPage{
+background:var(--bg);
+}
+
+body.light-mode .callCard{
+background:#FFFFFF;
+border:1px solid #E5E5E5;
+}
+
+body.light-mode .callInfo h3{
+color:#111B21;
+}
+
+body.light-mode .callInfo p{
+color:#666;
+}
+
+
+/* ==========================
+GLOBAL LIGHT MODE
+========================== */
+
+body.light-mode{
+
+--bg:#F5F7FB;
+--card:#FFFFFF;
+--header:#FFFFFF;
+--text:#111B21;
+--sub:#6B7280;
+--line:#E5E7EB;
+
+background:var(--bg);
+color:var(--text);
+
+}
+
+body.light-mode .app{
+    background:#FFFFFF;
+}
+
+body.light-mode .callsPage,
+body.light-mode .snapPage,
+body.light-mode .dayView,
+body.light-mode .profilePage,
+body.light-mode .chatPage{
+    background:#F5F5F5;
+    color:#111;
+}
+
+body.light-mode .callCard,
+body.light-mode .dayBottom input,
+body.light-mode .bottomNav,
+body.light-mode .cameraControls,
+body.light-mode .glass{
+    background:rgba(255,255,255,.92);
+    color:#111;
+    border:1px solid #ddd;
+}
+
+body.light-mode .callInfo h3,
+body.light-mode .dayUser h3,
+body.light-mode #dayText{
+    color:#111;
+}
+
+body.light-mode .callInfo p,
+body.light-mode .dayUser small{
+    color:#666;
+}
+
+body.light-mode .icon-btn,
+body.light-mode .filters button,
+body.light-mode .snapTop button{
+    background:#EAEAEA;
+    color:#111;
+}
+
+.fab{
+    background:var(--primary);
+}
+
+.primaryBtn{
+    background:var(--primary);
+}
+
+.badge{
+    background:var(--primary);
+}
+
+.onlineDot{
+    background:var(--primary);
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Create AizerChat Account</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/signup.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <main class="signupPage">
+
+        <div class="signupTop">
+
+            <button
+                class="backBtn"
+                onclick="history.back()">
+
+                ←
+
+            </button>
+
+        </div>
+
+
+        <div class="signupLogo">
+
+            <div class="logoCircle">
+                💬
+            </div>
+
+            <h1>Create account</h1>
+
+            <p>
+                Join AizerChat and start connecting.
+            </p>
+
+        </div>
+
+
+        <div class="signupCard">
+
+            <div class="inputGroup">
+
+                <label for="fullName">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Your name"
+                    autocomplete="name">
+
+            </div>
+
+
+            <div class="inputGroup">
+
+                <label for="signupEmail">
+                    Email address
+                </label>
+
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="you@example.com"
+                    autocomplete="email">
+
+            </div>
+
+
+            <div class="inputGroup">
+
+                <label for="signupPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create a password"
+                    autocomplete="new-password">
+
+            </div>
+
+
+            <div class="inputGroup">
+
+                <label for="confirmPassword">
+                    Confirm password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Repeat your password"
+                    autocomplete="new-password">
+
+            </div>
+
+
+            <button
+                class="createBtn"
+                id="createBtn">
+
+                Create account
+
+            </button>
+
+
+            <p class="loginLink">
+
+                Already have an account?
+
+                <button
+                    onclick="location.href='login.html'">
+
+                    Login
+
+                </button>
+
+            </p>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/signup.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DayView</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dayview.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="dayView">
+
+<div class="progressBar">
+
+<div id="progress"></div>
+
+</div>
+
+<header class="dayHeader">
+
+<button id="closeDay">✕
+
+</button>
+
+<div class="dayUser">
+
+<img id="dayAvatar">
+
+<div>
+
+<h3 id="dayName"></h3>
+
+<small id="dayTime"></small>
+
+</div>
+
+</div>
+
+</header>
+
+<div class="dayContent">
+
+<img id="dayImage">
+
+<p id="dayText"></p>
+
+</div>
+
+<div class="dayBottom">
+
+<input
+type="text"
+placeholder="Reply...">
+
+<button>
+
+➤
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= BOTTOM NAV ================= -->
+
+<nav class="bottomNav">
+
+<button onclick="location.href='home.html'">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+<path d="M4 4h16v12H7l-3 3V4z"/>
+</svg>
+<span>Chats</span>
+</button>
+
+<button class="active">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+<path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/>
+</svg>
+<span>dayview</span>
+</button>
+
+<button onclick="location.href='snap.html'">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+<path d="M12 5l2 3 3 1-2 2 .5 4L12 13l-3.5 2 .5-4-2-2 3-1z"/>
+</svg>
+<span>Snap</span>
+</button>
+
+<button onclick="location.href='calls.html'">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+<path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1 .3 2 .5 3.1.5.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.8 21 3 13.2 3 3c0-.6.4-1 1-1h3.6c.6 0 1 .4 1 1 0 1.1.2 2.1.5 3.1.1.3 0 .7-.3 1z"/>
+</svg>
+<span>Calls</span>
+</button>
+
+<button onclick="location.href='profile.html'">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+<path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4 0-7 2-7 5v1h14v-1c0-3-3-5-7-5z"/>
+</svg>
+<span>You</span>
+</button>
+
+</nav>
+
+<script src="js/dayview.js"></script>
+<script src="js/app.js"></script>
+<script src="js/theme.js"></script>
+</body>
+
+</html>

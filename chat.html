@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>AizerChat Chat</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/chat.css">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <div class="chatPage">
+
+
+        <!-- =========================
+             CHAT HEADER
+        ========================== -->
+
+        <header class="chatHeader">
+
+            <button
+                id="backBtn"
+                class="chatBackBtn">
+                ←
+            </button>
+
+
+            <img
+                id="contactAvatar"
+                src="images/profile.jpg"
+                alt="Contact">
+
+
+            <div class="contactInfo">
+
+                <h3 id="contactName">
+                    Friend Name
+                </h3>
+
+                <small id="contactStatus">
+                    Online
+                </small>
+
+            </div>
+
+
+            <div class="chatActions">
+
+<button id="chatSearchBtn" title="Search">🔎</button>
+
+                <button id="callBtn">
+                    ☎
+                </button>
+
+                <button id="moreBtn">
+                    ⋮
+                </button>
+
+            </div>
+
+        </header>
+
+
+<div id="chatSearchBar" class="chatSearchBar">
+
+    <button id="closeChatSearch">✕</button>
+
+    <input
+        id="chatSearchInput"
+        type="text"
+        placeholder="Search messages..."
+        autocomplete="off"
+    >
+
+    <span id="chatSearchCount">0/0</span>
+
+    <button id="chatSearchPrev">↑</button>
+
+    <button id="chatSearchNext">↓</button>
+
+</div>
+
+        <!-- =========================
+             MESSAGES
+        ========================== -->
+
+        <main id="messages">
+
+        </main>
+
+
+        <!-- =========================
+             TYPING INDICATOR
+        ========================== -->
+
+        <div
+            id="typingIndicator"
+            class="typingIndicator">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <label id="typingText">
+                Typing...
+            </label>
+
+        </div>
+
+
+        <!-- =========================
+             ATTACHMENT MENU
+        ========================== -->
+
+        <div
+            id="attachMenu"
+            class="attachMenu">
+
+            <button id="galleryBtn">
+                🖼️ Gallery
+            </button>
+
+            <button id="fileBtn">
+                📄 File
+            </button>
+
+        </div>
+
+
+        <!-- IMAGE PICKER -->
+
+        <input
+            type="file"
+            id="galleryInput"
+            accept="image/*"
+            hidden>
+
+
+        <!-- FILE PICKER -->
+
+        <input
+            type="file"
+            id="fileInput"
+            hidden>
+
+
+        <!-- CAMERA -->
+
+        <input
+            type="file"
+            id="cameraInput"
+            accept="image/*"
+            capture="environment"
+            hidden>
+
+<!-- =========================================
+     REPLY PREVIEW
+========================================= -->
+<div
+    id="replyPreview"
+    class="replyPreview">
+    <div class="replyPreviewBar"></div>
+    <div class="replyPreviewContent">
+        <div
+            id="replyPreviewTitle"
+            class="replyPreviewTitle">
+            Replying
+        </div>
+        <div
+            id="replyPreviewText"
+            class="replyPreviewText">
+        </div>
+    </div>
+    <button
+        id="replyPreviewClose"
+        class="replyPreviewClose">
+        ✕
+    </button>
+</div>
+
+        <!-- =========================
+             MESSAGE BAR
+        ========================== -->
+
+        <div class="messageBar">
+
+
+            <button
+                id="attachBtn"
+                class="chatToolBtn"
+                aria-label="Attachments">
+
+                📎
+
+            </button>
+
+
+            <button
+                id="cameraBtn"
+                class="chatToolBtn"
+                aria-label="Camera">
+
+                📷
+
+            </button>
+
+
+            <textarea
+                id="messageInput"
+                placeholder="Message..."
+                rows="1"></textarea>
+
+<button
+    id="sendBtn"
+    type="button"
+    aria-label="Voice message">
+
+    🎙️
+
+</button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     ATTACHMENT PREVIEW
+========================================= -->
+
+<div id="attachmentPreview" class="attachmentPreview">
+
+    <div class="attachmentPreviewBox">
+
+        <button
+            id="closeAttachmentPreview"
+            class="previewClose">
+            ✕
+        </button>
+
+        <div
+            id="attachmentPreviewContent"
+            class="attachmentPreviewContent">
+        </div>
+
+        <div class="previewInfo">
+
+            <div id="attachmentFileName">
+            </div>
+
+            <div id="attachmentFileSize">
+            </div>
+
+        </div>
+
+        <label class="viewOnceOption">
+
+            <input
+                type="checkbox"
+                id="viewOnceCheck">
+
+            <span>👁 View once</span>
+
+        </label>
+
+        <div class="previewActions">
+
+            <button
+                id="cancelAttachment"
+                class="previewCancel">
+                Cancel
+            </button>
+
+            <button
+                id="sendAttachment"
+                class="previewSend">
+                ➤ Send
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Keep these -->
+<script src="js/app.js"></script>
+<script src="js/chat.js"></script>
+
+<!-- Add this -->
+<script type="module" src="js/firebase-sync.js"></script>
+</body>
+
+</html>

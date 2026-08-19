@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AizerChat</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/splash.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="splashScreen">
+
+    <div class="logoBox">
+
+        <div class="logoA">
+            A
+        </div>
+
+    </div>
+
+    <h1>AizerChat</h1>
+
+    <p>Fast • Smart • Connected</p>
+
+    <div class="loader">
+
+        <div class="loaderBar"></div>
+
+    </div>
+
+</div>
+
+<script>
+
+if(window.location.pathname.includes("index.html") 
+|| window.location.pathname.endsWith("/")){
+
+setTimeout(()=>{
+
+window.location.href="login.html";
+
+},1500);
+
+}
+
+</script>
+
+</body>
+
+</html>

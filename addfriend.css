@@ -1,0 +1,308 @@
+/* ==========================
+AIZERCHAT ADD FRIEND
+========================== */
+
+.addFriendPage{
+
+    width:100%;
+    height:100vh;
+
+    background:var(--bg);
+
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================
+HEADER
+========================== */
+
+.pageHeader{
+
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 18px;
+
+    background:rgba(20,28,35,.60);
+
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    flex-shrink:0;
+
+}
+
+
+.pageTitle{
+
+    color:var(--text);
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+
+/* BACK BUTTON */
+
+.iconBtn{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    color:var(--text);
+
+    font-size:24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================
+CONTENT
+========================== */
+
+.addFriendContent{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding:30px 20px;
+
+    overflow-y:auto;
+
+}
+
+
+/* ICON */
+
+.friendIcon{
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:45px;
+
+    margin-top:20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.3);
+
+}
+
+
+/* TITLE */
+
+.addFriendContent h3{
+
+    margin-top:25px;
+
+    font-size:22px;
+
+    color:var(--text);
+
+}
+
+
+/* DESCRIPTION */
+
+.addFriendContent > p{
+
+    color:var(--sub);
+
+    font-size:14px;
+
+    text-align:center;
+
+    margin-top:8px;
+
+    margin-bottom:25px;
+
+    max-width:330px;
+
+}
+
+
+/* ==========================
+INPUT GROUP
+========================== */
+
+.inputGroup{
+
+    width:100%;
+
+    max-width:350px;
+
+    margin-bottom:15px;
+
+}
+
+
+.inputGroup label{
+
+    display:block;
+
+    color:var(--sub);
+
+    font-size:13px;
+
+    margin-bottom:7px;
+
+}
+
+
+.inputGroup input{
+
+    width:100%;
+
+    height:50px;
+
+    background:var(--header);
+
+    border:1px solid var(--line);
+
+    outline:none;
+
+    border-radius:15px;
+
+    padding:0 18px;
+
+    color:var(--text);
+
+    font-size:15px;
+
+}
+
+
+.inputGroup input::placeholder{
+
+    color:var(--sub);
+
+}
+
+
+.inputGroup input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 0 0 2px var(--primary-glow);
+
+}
+
+
+/* ==========================
+ADD BUTTON
+========================== */
+
+.primaryBtn{
+
+    width:100%;
+
+    max-width:350px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    margin-top:5px;
+
+    transition:.2s;
+
+}
+
+
+.primaryBtn:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* ==========================
+LIGHT MODE
+========================== */
+
+body.light-mode .pageHeader{
+
+    background:rgba(255,255,255,.85);
+
+    border-bottom:1px solid #E5E7EB;
+
+}
+
+
+body.light-mode .iconBtn{
+
+    background:#EEF1F5;
+
+    color:#111B21;
+
+}
+
+
+body.light-mode .friendIcon{
+
+    background:#EEF1F5;
+
+}
+
+
+body.light-mode .inputGroup input{
+
+    background:#F5F7FB;
+
+    border-color:#E5E7EB;
+
+    color:#111B21;
+
+}

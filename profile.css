@@ -1,0 +1,400 @@
+/* =================================
+   AIZERCHAT PROFILE
+   CLEAN PREMIUM UI
+================================= */
+
+/* PROFILE PAGE */
+
+.profilePage {
+    height: calc(100vh - 75px);
+    background: var(--bg);
+    padding: 20px;
+    overflow-y: auto;
+    padding-bottom: 100px;
+}
+
+
+/* PROFILE HEADER */
+
+.profileHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding: 25px 20px;
+
+    background: rgba(255,255,255,.08);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 25px;
+}
+
+
+/* PROFILE IMAGE */
+
+.profileImageBox {
+    position: relative;
+}
+
+.profileImageBox img {
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid var(--primary);
+
+    box-shadow:
+        0 0 25px var(--primary-glow);
+}
+
+
+/* EDIT PHOTO */
+
+.editPhoto {
+    position: absolute;
+
+    right: 3px;
+    bottom: 3px;
+
+    width: 36px;
+    height: 36px;
+
+    border: 2px solid var(--card);
+    border-radius: 50%;
+
+    background: var(--primary);
+    color: white;
+
+    font-size: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+
+/* NAME */
+
+.profileHeader h2 {
+    margin-top: 15px;
+
+    font-size: 24px;
+    font-weight: 600;
+
+    color: var(--text);
+}
+
+
+/* SUBTITLE */
+
+.profileHeader p {
+    margin-top: 5px;
+
+    font-size: 14px;
+
+    color: var(--sub);
+}
+
+
+/* SETTINGS LIST */
+
+.profileMenu {
+    margin-top: 20px;
+}
+
+
+/* SETTINGS CARD */
+
+.settingsCard {
+    width: 100%;
+
+    min-height: 68px;
+
+    margin-bottom: 12px;
+
+    padding: 12px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    background: rgba(255,255,255,.08);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: 18px;
+
+    color: var(--text);
+
+    transition: .25s;
+
+    cursor: pointer;
+}
+
+.settingsCard:active {
+    transform: scale(.98);
+}
+
+
+/* SETTINGS ICON */
+
+.settingsIcon {
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.10);
+
+    font-size: 20px;
+}
+
+
+/* SETTINGS TEXT */
+
+.settingsCard h3 {
+    font-size: 16px;
+    font-weight: 600;
+
+    color: var(--text);
+}
+
+.settingsCard p {
+    margin-top: 4px;
+
+    font-size: 13px;
+
+    color: var(--sub);
+}
+
+
+/* =================================
+   PROFILE HEADER
+   SAME STYLE AS CALLS / HOME
+================================= */
+
+.profilePage ~ .bottomNav {
+    z-index: 1000;
+}
+
+
+/* =================================
+   LIGHT MODE
+================================= */
+
+body.light-mode .profilePage {
+    background: #F5F7FB;
+}
+
+body.light-mode .profileHeader {
+    background: rgba(255,255,255,.90);
+
+    border: 1px solid #E5E7EB;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.05);
+}
+
+body.light-mode .settingsCard {
+    background: rgba(255,255,255,.90);
+
+    border: 1px solid #E5E7EB;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.04);
+}
+
+body.light-mode .settingsIcon {
+    background: #EEF1F5;
+}
+
+body.light-mode .profileHeader h2,
+body.light-mode .settingsCard h3 {
+    color: #111B21;
+}
+
+body.light-mode .profileHeader p,
+body.light-mode .settingsCard p {
+    color: #666;
+}
+
+
+/* =================================
+   PROFILE HEADER BUTTONS
+================================= */
+
+.profilePage .icon-btn,
+.profilePage .iconBtn {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.08);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    color: var(--text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+body.light-mode .profilePage .icon-btn,
+body.light-mode .profilePage .iconBtn {
+    background: #EEF1F5;
+    color: #111B21;
+}
+
+.profile-title{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:12px;
+}
+
+.profile-title h1{
+    margin:0;
+}
+
+.profile-title .iconBtn{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    color:var(--text);
+
+    font-size:22px;
+}
+
+body.light-mode .profile-title .iconBtn{
+    background:#EEF1F5;
+    color:#111B21;
+}
+
+.app-header{
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:16px 18px;
+
+    background:rgba(20,28,35,.60);
+
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+
+.header-left{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:12px;
+}
+
+
+.header-right{
+    display:flex;
+    align-items:center;
+    margin-left:auto;
+}
+
+.icon-btn{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.icon-btn:active{
+    transform:scale(.92);
+}
+
+
+/* ==========================
+LOGOUT
+========================== */
+
+.logoutCard{
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.logoutCard h3{
+
+    color:#ff5c5c;
+
+}
+
+.logoutCard:hover{
+
+    transform:translateX(5px);
+
+    background:rgba(255,80,80,.10);
+
+}
