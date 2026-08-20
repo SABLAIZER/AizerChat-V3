@@ -3123,3 +3123,35 @@ function closeCallScreen() {
     }
 
 }
+
+// =========================================
+// CHAT MORE MENU
+// =========================================
+
+const moreBtn = document.getElementById("moreBtn");
+const chatMoreMenu = document.getElementById("chatMoreMenu");
+
+if (moreBtn && chatMoreMenu) {
+
+    moreBtn.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        chatMoreMenu.classList.toggle("show");
+
+    });
+
+    document.addEventListener("click", (e) => {
+
+        if (
+            !chatMoreMenu.contains(e.target) &&
+            e.target !== moreBtn
+        ) {
+
+            chatMoreMenu.classList.remove("show");
+
+        }
+
+    });
+
+}
