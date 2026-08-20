@@ -2893,3 +2893,195 @@ body.dataMode .received .voiceWaveform span {
     color:#2563EB;
 
 }
+
+
+/* =========================================================
+   AIZERCHAT V3 — CALL SCREEN
+========================================================= */
+
+.callScreen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: var(--bg);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 25px 20px 45px;
+
+    animation: callScreenIn .2s ease;
+
+}
+
+
+@keyframes callScreenIn {
+
+    from {
+        opacity: 0;
+        transform: scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+.callTop {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.closeCallScreen {
+
+    width: 44px;
+
+    height: 44px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--header);
+
+    color: var(--text);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+
+.callProfile {
+
+    text-align: center;
+
+    margin-top: -80px;
+
+}
+
+
+.callProfile img {
+
+    width: 110px;
+
+    height: 110px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid var(--primary);
+
+    margin-bottom: 20px;
+
+}
+
+
+.callProfile h2 {
+
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 25px;
+
+}
+
+
+.callProfile p {
+
+    margin-top: 8px;
+
+    color: var(--sub);
+
+    font-size: 15px;
+
+}
+
+
+.callControls {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+}
+
+
+.callControl,
+.callEndBtn {
+
+    width: 60px;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 23px;
+
+    background: var(--header);
+
+    color: var(--text);
+
+}
+
+
+.callControl.active {
+
+    background: var(--primary);
+
+}
+
+
+.callEndBtn {
+
+    width: 70px;
+
+    height: 70px;
+
+    background: #e53935;
+
+    color: white;
+
+    transform: rotate(135deg);
+
+}
+
+
+.callEndBtn:active,
+.callControl:active,
+.closeCallScreen:active {
+
+    transform: scale(.92);
+
+}
