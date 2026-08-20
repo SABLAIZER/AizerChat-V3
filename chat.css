@@ -3085,3 +3085,128 @@ body.dataMode .received .voiceWaveform span {
     transform: scale(.92);
 
 }
+
+/* =========================================
+   CHAT MORE MENU
+========================================= */
+
+.chatMoreMenu {
+
+    position:absolute;
+
+    top:64px;
+    right:10px;
+
+    width:210px;
+
+    display:none;
+
+    flex-direction:column;
+
+    gap:4px;
+
+    padding:8px;
+
+    background:var(--card);
+
+    border:1px solid var(--line);
+
+    border-radius:16px;
+
+    box-shadow:0 15px 45px rgba(0,0,0,.35);
+
+    z-index:1000;
+
+    animation:moreMenuIn .18s ease;
+}
+
+.chatMoreMenu.show {
+
+    display:flex;
+}
+
+.chatMoreMenu button {
+
+    width:100%;
+
+    min-height:44px;
+
+    padding:0 13px;
+
+    border:none;
+
+    border-radius:11px;
+
+    background:transparent;
+
+    color:var(--text);
+
+    text-align:left;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.chatMoreMenu button:active {
+
+    background:var(--line);
+
+    transform:scale(.98);
+}
+
+#menuClearChat {
+
+    color:#ff5c5c;
+}
+
+@keyframes moreMenuIn {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(-6px) scale(.96);
+
+    }
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/* LIGHT MODE */
+
+body.light-mode .chatMoreMenu {
+
+    background:#fff;
+
+    border-color:#E5E7EB;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
+
+}
+
+body.light-mode .chatMoreMenu button {
+
+    color:#111B21;
+
+}
+
+body.light-mode .chatMoreMenu button:active {
+
+    background:#EEF1F5;
+
+}
