@@ -3124,9 +3124,9 @@ function closeCallScreen() {
 
 }
 
-// =========================================
+// =========================================================
 // CHAT MORE MENU
-// =========================================
+// =========================================================
 
 const moreBtn = document.getElementById("moreBtn");
 const chatMoreMenu = document.getElementById("chatMoreMenu");
@@ -3141,17 +3141,21 @@ if (moreBtn && chatMoreMenu) {
 
     });
 
-    document.addEventListener("click", (e) => {
-
-        if (
-            !chatMoreMenu.contains(e.target) &&
-            e.target !== moreBtn
-        ) {
-
-            chatMoreMenu.classList.remove("show");
-
-        }
-
-    });
-
 }
+
+
+// Close menu when tapping outside
+
+document.addEventListener("click", (e) => {
+
+    if (
+        chatMoreMenu &&
+        !chatMoreMenu.contains(e.target) &&
+        e.target !== moreBtn
+    ) {
+
+        chatMoreMenu.classList.remove("show");
+
+    }
+
+});
