@@ -2481,28 +2481,50 @@ let currentVoiceAudio = null;
 // UPDATE SEND / VOICE BUTTON
 // =========================================================
 function updateSendButton() {
+
     if (!sendBtn || !messageInput) {
         return;
     }
-    if (messageInput.value.trim()) {
+
+    // Don't change the button while recording
+    if (voiceRecording) {
+        sendBtn.innerHTML = "⏹";
+        sendBtn.setAttribute(
+            "aria-label",
+            "Stop recording"
+        );
+        sendBtn.classList.add("recording");
+        return;
+    }
+
+    // Text entered → SEND
+    if (messageInput.value.trim() !== "") {
+
         sendBtn.innerHTML = "➤";
+
         sendBtn.setAttribute(
             "aria-label",
             "Send message"
         );
-        sendBtn.classList.remove(
-            "voiceMode"
-        );
-    } else {
+
+        sendBtn.classList.remove("voiceMode");
+
+    }
+
+    // Empty input → VOICE
+    else {
+
         sendBtn.innerHTML = "🎙️";
+
         sendBtn.setAttribute(
             "aria-label",
             "Record voice message"
         );
-        sendBtn.classList.add(
-            "voiceMode"
-        );
+
+        sendBtn.classList.add("voiceMode");
+
     }
+
 }
 // =========================================================
 // MESSAGE INPUT
@@ -2841,39 +2863,47 @@ function finishVoiceRecording() {
     );
 }
 // =========================================================
-// SEND / VOICE BUTTON
+// AIZERCHAT V3 — SEND / VOICE BUTTON
 // =========================================================
+
 if (sendBtn) {
-    // IMPORTANT:
-    // Prevent form submission / page exit
-    sendBtn.setAttribute(
-        "type",
-        "button"
-    );
-    sendBtn.addEventListener(
-        "click",
-        function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            // If currently recording,
-            // clicking stops it.
-            if (voiceRecording) {
-                stopVoiceRecording();
-                return;
-            }
-            // If there is text,
-            // send the text message.
-            if (
-                messageInput &&
-                messageInput.value.trim()
-            ) {
-                sendMessage();
-                return;
-            }
-            // Otherwise start voice recording.
-            startVoiceRecording();
+
+    sendBtn.type = "button";
+
+    sendBtn.addEventListener("click", function(e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        // -----------------------------------------
+        // IF CURRENTLY RECORDING → STOP
+        // -----------------------------------------
+
+        if (voiceRecording) {
+            stopVoiceRecording();
+            return;
         }
-    );
+
+        // -----------------------------------------
+        // IF THERE IS TEXT → SEND MESSAGE
+        // -----------------------------------------
+
+        if (
+            messageInput &&
+            messageInput.value.trim() !== ""
+        ) {
+            sendMessage();
+            return;
+        }
+
+        // -----------------------------------------
+        // NO TEXT → START VOICE RECORDING
+        // -----------------------------------------
+
+        startVoiceRecording();
+
+    });
+
 }
 // =========================================================
 // PLAY VOICE MESSAGE
