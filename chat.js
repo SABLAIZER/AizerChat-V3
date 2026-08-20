@@ -2947,3 +2947,179 @@ function playVoiceMessage(
                 null;
         };
 }
+
+// =========================================================
+// AIZERCHAT V3 — CALL BUTTON
+// =========================================================
+
+const callBtn = document.getElementById("callBtn");
+
+if (callBtn) {
+
+    callBtn.addEventListener("click", function(e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        openCallScreen();
+
+    });
+
+}
+
+
+// =========================================================
+// CALL SCREEN
+// =========================================================
+
+function openCallScreen() {
+
+    // Prevent duplicate call screen
+    const existing =
+        document.getElementById("callScreen");
+
+    if (existing) {
+        return;
+    }
+
+    const callScreen =
+        document.createElement("div");
+
+    callScreen.id = "callScreen";
+    callScreen.className = "callScreen";
+
+    callScreen.innerHTML = `
+
+        <div class="callTop">
+
+            <button
+                id="closeCallScreen"
+                class="closeCallScreen">
+                ←
+            </button>
+
+        </div>
+
+
+        <div class="callProfile">
+
+            <img
+                src="${
+                    contactAvatar
+                    ? contactAvatar.src
+                    : "images/profile.jpg"
+                }"
+                alt="Profile">
+
+            <h2>
+                ${escapeHTML(contactName)}
+            </h2>
+
+            <p>
+                Calling...
+            </p>
+
+        </div>
+
+
+        <div class="callControls">
+
+            <button
+                class="callControl"
+                id="muteCallBtn">
+                🎙️
+            </button>
+
+            <button
+                class="callEndBtn"
+                id="endCallBtn">
+                ☎
+            </button>
+
+            <button
+                class="callControl">
+                🔊
+            </button>
+
+        </div>
+
+    `;
+
+    document.body.appendChild(callScreen);
+
+
+    // Close button
+    const closeBtn =
+        document.getElementById(
+            "closeCallScreen"
+        );
+
+    if (closeBtn) {
+
+        closeBtn.onclick =
+            closeCallScreen;
+
+    }
+
+
+    // End call
+    const endBtn =
+        document.getElementById(
+            "endCallBtn"
+        );
+
+    if (endBtn) {
+
+        endBtn.onclick =
+            closeCallScreen;
+
+    }
+
+
+    // Mute button
+    const muteBtn =
+        document.getElementById(
+            "muteCallBtn"
+        );
+
+    if (muteBtn) {
+
+        muteBtn.onclick =
+            function() {
+
+                this.classList.toggle(
+                    "active"
+                );
+
+                this.textContent =
+                    this.classList.contains(
+                        "active"
+                    )
+                    ? "🔇"
+                    : "🎙️";
+
+            };
+
+    }
+
+}
+
+
+// =========================================================
+// CLOSE CALL SCREEN
+// =========================================================
+
+function closeCallScreen() {
+
+    const callScreen =
+        document.getElementById(
+            "callScreen"
+        );
+
+    if (callScreen) {
+
+        callScreen.remove();
+
+    }
+
+}
