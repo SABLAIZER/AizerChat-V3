@@ -3086,127 +3086,416 @@ body.dataMode .received .voiceWaveform span {
 
 }
 
-/* =========================================
-   CHAT MORE MENU
-========================================= */
+/* =========================================================
+   AIZERCHAT V3 — CONTACT PROFILE / CHAT INFO
+========================================================= */
 
-.chatMoreMenu {
+.contactProfileBtn {
 
-    position:absolute;
+    flex:1;
+    min-width:0;
 
-    top:64px;
-    right:10px;
+    display:flex;
+    align-items:center;
 
-    width:210px;
+    gap:10px;
+
+    padding:0;
+
+    border:none;
+
+    background:transparent;
+
+    color:inherit;
+
+    text-align:left;
+
+    cursor:pointer;
+}
+
+
+.contactProfileBtn:active {
+
+    transform:scale(.98);
+
+}
+
+
+.contactProfileBtn img {
+
+    width:46px;
+    height:46px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid var(--primary);
+
+}
+
+
+.contactProfileBtn .contactInfo {
+
+    min-width:0;
+
+    flex:1;
+}
+
+
+/* =========================================================
+   CHAT INFO PAGE
+========================================================= */
+
+.chatInfoPage {
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:5000;
 
     display:none;
 
     flex-direction:column;
 
-    gap:4px;
+    overflow-y:auto;
 
-    padding:8px;
-
-    background:var(--card);
-
-    border:1px solid var(--line);
-
-    border-radius:16px;
-
-    box-shadow:0 15px 45px rgba(0,0,0,.35);
-
-    z-index:1000;
-
-    animation:moreMenuIn .18s ease;
-}
-
-.chatMoreMenu.show {
-
-    display:flex;
-}
-
-.chatMoreMenu button {
-
-    width:100%;
-
-    min-height:44px;
-
-    padding:0 13px;
-
-    border:none;
-
-    border-radius:11px;
-
-    background:transparent;
+    background:var(--bg);
 
     color:var(--text);
 
-    text-align:left;
+    transform:translateX(100%);
 
-    font-size:14px;
+    transition:
+        transform .25s ease;
 
-    cursor:pointer;
+}
+
+
+/* OPEN */
+
+.chatInfoPage.show {
+
+    display:flex;
+
+    transform:translateX(0);
+
+}
+
+
+/* =========================================================
+   CHAT INFO HEADER
+========================================================= */
+
+.chatInfoHeader {
+
+    height:68px;
+
+    flex-shrink:0;
 
     display:flex;
 
     align-items:center;
 
-    gap:10px;
+    gap:12px;
+
+    padding:0 14px;
+
+    background:rgba(20,28,35,.88);
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    border-bottom:1px solid var(--line);
 
 }
 
-.chatMoreMenu button:active {
 
-    background:var(--line);
+.chatInfoHeader button {
+
+    width:42px;
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:var(--text);
+
+    font-size:22px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+}
+
+
+.chatInfoHeader button:active {
+
+    transform:scale(.9);
+
+}
+
+
+.chatInfoHeader h2 {
+
+    margin:0;
+
+    font-size:19px;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   PROFILE AREA
+========================================================= */
+
+.chatInfoProfile {
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:28px 20px 30px;
+
+    text-align:center;
+
+    background:var(--bg);
+
+}
+
+
+.chatInfoProfile img {
+
+    width:115px;
+    height:115px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid var(--primary);
+
+    box-shadow:
+        0 0 25px var(--primary-glow);
+
+}
+
+
+.chatInfoProfile h2 {
+
+    margin:14px 0 4px;
+
+    font-size:21px;
+
+    color:var(--text);
+
+}
+
+
+.chatInfoProfile p {
+
+    margin:0;
+
+    color:var(--primary);
+
+    font-size:12px;
+
+}
+
+
+/* =========================================================
+   INFO ITEMS
+========================================================= */
+
+.chatInfoItem {
+
+    width:calc(100% - 20px);
+
+    min-height:68px;
+
+    margin:5px 10px;
+
+    padding:10px 14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    border:1px solid var(--line);
+
+    border-radius:17px;
+
+    background:var(--card);
+
+    color:var(--text);
+
+    text-align:left;
+
+    cursor:pointer;
+
+    transition:
+        transform .18s ease,
+        background .2s ease;
+
+}
+
+
+.chatInfoItem:active {
 
     transform:scale(.98);
-}
 
-#menuClearChat {
-
-    color:#ff5c5c;
-}
-
-@keyframes moreMenuIn {
-
-    from {
-
-        opacity:0;
-
-        transform:translateY(-6px) scale(.96);
-
-    }
-
-    to {
-
-        opacity:1;
-
-        transform:translateY(0) scale(1);
-
-    }
+    background:rgba(255,255,255,.08);
 
 }
 
-/* LIGHT MODE */
 
-body.light-mode .chatMoreMenu {
+.chatInfoIcon {
 
-    background:#fff;
+    width:40px;
+    height:40px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:rgba(255,255,255,.07);
+
+    font-size:19px;
+
+}
+
+
+.chatInfoItem > span:nth-child(2) {
+
+    flex:1;
+
+    min-width:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+}
+
+
+.chatInfoItem strong {
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+
+.chatInfoItem small {
+
+    font-size:11px;
+
+    color:var(--sub);
+
+}
+
+
+.chatInfoItem > b {
+
+    color:var(--sub);
+
+    font-size:22px;
+
+    font-weight:400;
+
+}
+
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+body.light-mode .chatInfoHeader {
+
+    background:rgba(255,255,255,.94);
 
     border-color:#E5E7EB;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.18);
-
 }
 
-body.light-mode .chatMoreMenu button {
+
+body.light-mode .chatInfoHeader button {
+
+    background:#EEF1F5;
 
     color:#111B21;
 
 }
 
-body.light-mode .chatMoreMenu button:active {
+
+body.light-mode .chatInfoItem {
+
+    background:#fff;
+
+    border-color:#E5E7EB;
+
+}
+
+
+body.light-mode .chatInfoIcon {
 
     background:#EEF1F5;
+
+}
+
+
+body.light-mode .chatInfoItem:active {
+
+    background:#F1F3F5;
+
+}
+
+
+/* =========================================================
+   TEXT MODE
+========================================================= */
+
+body.textMode .chatInfoProfile img {
+
+    border-color:#25D366;
+
+}
+
+
+/* =========================================================
+   DATA MODE
+========================================================= */
+
+body.dataMode .chatInfoProfile img {
+
+    border-color:#2563EB;
 
 }
