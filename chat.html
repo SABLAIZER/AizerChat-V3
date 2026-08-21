@@ -27,7 +27,11 @@
              CHAT HEADER
         ========================== -->
 
-    <header class="chatHeader">
+ <!-- =========================
+     CHAT HEADER
+========================= -->
+
+<header class="chatHeader">
 
     <button
         id="backBtn"
@@ -36,22 +40,34 @@
         ←
     </button>
 
-    <img
-        id="contactAvatar"
-        src="images/profile.jpg"
-        alt="Contact">
 
-    <div class="contactInfo">
+    <!-- CONTACT PROFILE -->
+    <button
+        id="contactProfileBtn"
+        class="contactProfileBtn"
+        type="button">
 
-        <h3 id="contactName">
-            Friend Name
-        </h3>
+        <img
+            id="contactAvatar"
+            src="images/profile.jpg"
+            alt="Contact">
 
-        <small id="contactStatus">
-            Online
-        </small>
+        <div class="contactInfo">
 
-    </div>
+            <h3 id="contactName">
+                Friend Name
+            </h3>
+
+            <small id="contactStatus">
+                Online
+            </small>
+
+        </div>
+
+    </button>
+
+
+    <!-- CHAT ACTIONS -->
 
     <div class="chatActions">
 
@@ -69,17 +85,166 @@
             ☎
         </button>
 
-        <button
-            id="moreBtn"
-            type="button"
-            title="More">
-            ⋮
-        </button>
-
     </div>
 
 </header>
 
+
+<!-- =========================
+     CHAT INFO / PROFILE PAGE
+========================= -->
+
+<section
+    id="chatInfoPage"
+    class="chatInfoPage">
+
+    <div class="chatInfoHeader">
+
+        <button
+            id="closeChatInfo"
+            type="button">
+            ←
+        </button>
+
+        <h2>Chat Info</h2>
+
+    </div>
+
+
+    <!-- PROFILE -->
+
+    <div class="chatInfoProfile">
+
+        <img
+            id="infoContactAvatar"
+            src="images/profile.jpg"
+            alt="Contact">
+
+        <h2 id="infoContactName">
+            Friend Name
+        </h2>
+
+        <p id="infoContactStatus">
+            Online
+        </p>
+
+    </div>
+
+
+    <!-- MEDIA -->
+
+    <button
+        id="infoMedia"
+        class="chatInfoItem"
+        type="button">
+
+        <span class="chatInfoIcon">🖼️</span>
+
+        <span>
+            <strong>Media, Links & Docs</strong>
+            <small>Photos, videos, files and links</small>
+        </span>
+
+        <b>›</b>
+
+    </button>
+
+
+    <!-- NOTIFICATIONS -->
+
+    <button
+        id="infoNotifications"
+        class="chatInfoItem"
+        type="button">
+
+        <span class="chatInfoIcon">🔔</span>
+
+        <span>
+            <strong>Notifications</strong>
+            <small>Chat notification settings</small>
+        </span>
+
+        <b>›</b>
+
+    </button>
+
+
+    <!-- WALLPAPER -->
+
+    <button
+        id="infoWallpaper"
+        class="chatInfoItem"
+        type="button">
+
+        <span class="chatInfoIcon">🎨</span>
+
+        <span>
+            <strong>Chat Wallpaper</strong>
+            <small>Change the background</small>
+        </span>
+
+        <b>›</b>
+
+    </button>
+
+
+    <!-- CHAT SETTINGS -->
+
+    <button
+        id="infoSettings"
+        class="chatInfoItem"
+        type="button">
+
+        <span class="chatInfoIcon">⚙️</span>
+
+        <span>
+            <strong>Chat Settings</strong>
+            <small>Manage this conversation</small>
+        </span>
+
+        <b>›</b>
+
+    </button>
+
+
+    <!-- CHAT LOG -->
+
+    <button
+        id="infoChatLog"
+        class="chatInfoItem"
+        type="button">
+
+        <span class="chatInfoIcon">💬</span>
+
+        <span>
+            <strong>Chat Log</strong>
+            <small>View conversation history</small>
+        </span>
+
+        <b>›</b>
+
+    </button>
+
+
+    <!-- STARRED -->
+
+    <button
+        id="infoStarred"
+        class="chatInfoItem"
+        type="button">
+
+        <span class="chatInfoIcon">⭐</span>
+
+        <span>
+            <strong>Starred Messages</strong>
+            <small>Messages you've saved</small>
+        </span>
+
+        <b>›</b>
+
+    </button>
+
+</section>
 <!-- =========================
      CHAT MORE MENU
 ========================= -->
