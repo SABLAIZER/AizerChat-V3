@@ -3189,3 +3189,80 @@ document.addEventListener("click", (e) => {
     }
 
 });
+
+// =========================================================
+// AIZERCHAT V3 — FRIEND PROFILE / CHAT INFO
+// =========================================================
+
+const contactProfileBtn =
+    document.getElementById("contactProfileBtn");
+
+const chatInfoPage =
+    document.getElementById("chatInfoPage");
+
+const closeChatInfo =
+    document.getElementById("closeChatInfo");
+
+const infoContactAvatar =
+    document.getElementById("infoContactAvatar");
+
+const infoContactName =
+    document.getElementById("infoContactName");
+
+const infoContactStatus =
+    document.getElementById("infoContactStatus");
+
+
+// OPEN FRIEND PROFILE
+if (contactProfileBtn) {
+
+    contactProfileBtn.addEventListener("click", () => {
+
+        if (!chatInfoPage) return;
+
+
+        // Friend's name
+        if (infoContactName) {
+            infoContactName.textContent = contactName;
+        }
+
+
+        // Friend's profile picture
+        if (infoContactAvatar) {
+
+            const headerAvatar =
+                document.getElementById("contactAvatar");
+
+            if (headerAvatar && headerAvatar.src) {
+                infoContactAvatar.src =
+                    headerAvatar.src;
+            }
+        }
+
+
+        // Friend's status
+        if (infoContactStatus) {
+            infoContactStatus.textContent = "online";
+        }
+
+
+        // Open profile
+        chatInfoPage.classList.add("show");
+
+    });
+
+}
+
+
+// CLOSE FRIEND PROFILE
+if (closeChatInfo) {
+
+    closeChatInfo.addEventListener("click", () => {
+
+        if (chatInfoPage) {
+            chatInfoPage.classList.remove("show");
+        }
+
+    });
+
+}
