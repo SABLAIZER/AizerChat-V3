@@ -850,26 +850,34 @@ if (messageInput) {
     messageInput.addEventListener(
         "input",
         function() {
+
             this.style.height = "42px";
+
             this.style.height =
                 Math.min(
                     this.scrollHeight,
                     180
                 ) + "px";
+
             if (this.scrollHeight > 180) {
                 this.style.overflowY = "auto";
             } else {
                 this.style.overflowY = "hidden";
             }
+
             localStorage.setItem(
                 chatKey + "_draft",
                 this.value
             );
+
             if (this.value.trim()) {
                 showTyping();
             } else {
                 hideTyping();
             }
+
+            // Update SEND 🎙️ / SEND ➤ button
+            updateSendButton();
         }
     );
 }
@@ -2486,18 +2494,23 @@ function updateSendButton() {
         return;
     }
 
-    // Don't change the button while recording
+    // Recording → STOP button
     if (voiceRecording) {
+
         sendBtn.innerHTML = "⏹";
+
         sendBtn.setAttribute(
             "aria-label",
             "Stop recording"
         );
+
         sendBtn.classList.add("recording");
+        sendBtn.classList.remove("voiceMode");
+
         return;
     }
 
-    // Text entered → SEND
+    // Text entered → SEND button
     if (messageInput.value.trim() !== "") {
 
         sendBtn.innerHTML = "➤";
@@ -2508,35 +2521,23 @@ function updateSendButton() {
         );
 
         sendBtn.classList.remove("voiceMode");
+        sendBtn.classList.remove("recording");
 
+        return;
     }
 
-    // Empty input → VOICE
-    else {
+    // Empty input → VOICE button
+    sendBtn.innerHTML = "🎙️";
 
-        sendBtn.innerHTML = "🎙️";
-
-        sendBtn.setAttribute(
-            "aria-label",
-            "Record voice message"
-        );
-
-        sendBtn.classList.add("voiceMode");
-
-    }
-
-}
-// =========================================================
-// MESSAGE INPUT
-// =========================================================
-if (messageInput) {
-    messageInput.addEventListener(
-        "input",
-        function() {
-            updateSendButton();
-        }
+    sendBtn.setAttribute(
+        "aria-label",
+        "Record voice message"
     );
+
+    sendBtn.classList.add("voiceMode");
+    sendBtn.classList.remove("recording");
 }
+
 // =========================================================
 // INITIAL STATE
 // =========================================================
@@ -2868,6 +2869,8 @@ function finishVoiceRecording() {
 
 if (sendBtn) {
 
+    // VERY IMPORTANT:
+    // Prevent the button from submitting the page/form
     sendBtn.type = "button";
 
     sendBtn.addEventListener("click", function(e) {
@@ -2876,7 +2879,7 @@ if (sendBtn) {
         e.stopPropagation();
 
         // -----------------------------------------
-        // IF CURRENTLY RECORDING → STOP
+        // RECORDING → STOP RECORDING
         // -----------------------------------------
 
         if (voiceRecording) {
@@ -2885,25 +2888,29 @@ if (sendBtn) {
         }
 
         // -----------------------------------------
-        // IF THERE IS TEXT → SEND MESSAGE
+        // TEXT EXISTS → SEND MESSAGE
         // -----------------------------------------
 
         if (
             messageInput &&
             messageInput.value.trim() !== ""
         ) {
+
             sendMessage();
+            updateSendButton();
+
             return;
         }
 
         // -----------------------------------------
-        // NO TEXT → START VOICE RECORDING
+        // EMPTY INPUT → START VOICE RECORDING
         // -----------------------------------------
 
         startVoiceRecording();
 
     });
 
+}
 }
 // =========================================================
 // PLAY VOICE MESSAGE
