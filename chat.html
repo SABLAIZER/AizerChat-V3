@@ -42,29 +42,16 @@
 
 
     <!-- CONTACT PROFILE -->
-    <button
-        id="contactProfileBtn"
-        class="contactProfileBtn"
-        type="button">
+    <button class="contactProfileBtn" id="contactProfileBtn">
 
-        <img
-            id="contactAvatar"
-            src="images/profile.jpg"
-            alt="Contact">
+    <img id="contactAvatar" src="" alt="">
 
-        <div class="contactInfo">
+    <div class="contactInfo">
+        <h3 id="contactName">Friend Name</h3>
+        <small id="contactStatus">online</small>
+    </div>
 
-            <h3 id="contactName">
-                Friend Name
-            </h3>
-
-            <small id="contactStatus">
-                Online
-            </small>
-
-        </div>
-
-    </button>
+</button>
 
 
     <!-- CHAT ACTIONS -->
@@ -531,6 +518,103 @@
 
 </div>
 
+
+<!-- =====================================================
+     FRIEND CHAT INFO / PROFILE
+====================================================== -->
+
+<div class="chatInfoPage" id="chatInfoPage">
+
+    <div class="chatInfoHeader">
+
+        <button id="closeChatInfo">←</button>
+
+        <h2>Contact info</h2>
+
+    </div>
+
+
+    <div class="chatInfoProfile">
+
+        <img id="infoContactAvatar" src="" alt="">
+
+        <h2 id="infoContactName">Friend Name</h2>
+
+        <p id="infoContactStatus">online</p>
+
+    </div>
+
+
+    <button class="chatInfoItem" id="notificationSettings">
+
+        <div class="chatInfoIcon">🔔</div>
+
+        <span>
+            <strong>Notifications</strong>
+            <small>Customize notifications</small>
+        </span>
+
+        <b>›</b>
+
+    </button>
+
+
+    <button class="chatInfoItem" id="searchMessages">
+
+        <div class="chatInfoIcon">🔍</div>
+
+        <span>
+            <strong>Search</strong>
+            <small>Search messages in this chat</small>
+        </span>
+
+        <b>›</b>
+
+    </button>
+
+
+    <button class="chatInfoItem" id="mediaInfo">
+
+        <div class="chatInfoIcon">🖼️</div>
+
+        <span>
+            <strong>Media, links and files</strong>
+            <small>View shared content</small>
+        </span>
+
+        <b>›</b>
+
+    </button>
+
+
+    <button class="chatInfoItem" id="encryptionInfo">
+
+        <div class="chatInfoIcon">🔒</div>
+
+        <span>
+            <strong>Encryption</strong>
+            <small>Messages are protected</small>
+        </span>
+
+        <b>›</b>
+
+    </button>
+
+
+    <button class="chatInfoItem" id="clearChat">
+
+        <div class="chatInfoIcon">🗑️</div>
+
+        <span>
+            <strong>Clear chat</strong>
+            <small>Remove messages from this chat</small>
+        </span>
+
+        <b>›</b>
+
+    </button>
+
+</div>
 <!-- Keep these -->
 <script src="/AizerChat-V3/app.js"></script>
 <script src="/AizerChat-V3/chat.js"></script>
