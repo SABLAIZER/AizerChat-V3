@@ -2869,8 +2869,7 @@ function finishVoiceRecording() {
 
 if (sendBtn) {
 
-    // VERY IMPORTANT:
-    // Prevent the button from submitting the page/form
+    // Prevent button from submitting the page/form
     sendBtn.type = "button";
 
     sendBtn.addEventListener("click", function(e) {
@@ -2878,39 +2877,107 @@ if (sendBtn) {
         e.preventDefault();
         e.stopPropagation();
 
-        // -----------------------------------------
+        // =============================================
         // RECORDING → STOP RECORDING
-        // -----------------------------------------
+        // =============================================
 
         if (voiceRecording) {
             stopVoiceRecording();
             return;
         }
 
-        // -----------------------------------------
+        // =============================================
         // TEXT EXISTS → SEND MESSAGE
-        // -----------------------------------------
+        // =============================================
 
         if (
             messageInput &&
             messageInput.value.trim() !== ""
         ) {
-
             sendMessage();
             updateSendButton();
-
             return;
         }
 
-        // -----------------------------------------
+        // =============================================
         // EMPTY INPUT → START VOICE RECORDING
-        // -----------------------------------------
+        // =============================================
 
         startVoiceRecording();
 
     });
 
 }
+
+
+// =========================================================
+// PLAY VOICE MESSAGE
+// =========================================================
+
+function playVoiceMessage(
+    audioData,
+    button
+) {
+
+    if (!audioData) {
+        return;
+    }
+
+    if (
+        currentVoiceAudio &&
+        !currentVoiceAudio.paused
+    ) {
+
+        currentVoiceAudio.pause();
+        currentVoiceAudio.currentTime = 0;
+
+        document
+            .querySelectorAll(".voicePlayBtn")
+            .forEach(function(btn) {
+                btn.innerHTML = "▶";
+            });
+
+        if (
+            currentVoiceAudio.src === audioData
+        ) {
+            currentVoiceAudio = null;
+            return;
+        }
+    }
+
+    const audio = new Audio(audioData);
+
+    currentVoiceAudio = audio;
+
+    button.innerHTML = "⏸";
+
+    const playPromise = audio.play();
+
+    if (
+        playPromise &&
+        typeof playPromise.catch === "function"
+    ) {
+
+        playPromise.catch(function(error) {
+
+            console.error(
+                "Audio playback error:",
+                error
+            );
+
+            button.innerHTML = "▶";
+            currentVoiceAudio = null;
+
+        });
+    }
+
+    audio.onended = function() {
+
+        button.innerHTML = "▶";
+        currentVoiceAudio = null;
+
+    };
+
 }
 // =========================================================
 // PLAY VOICE MESSAGE
